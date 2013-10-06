@@ -11,7 +11,7 @@ function! OpenOrRefreshBrowser()
     if g:fiddle_auto_save
         :w
     endif
-    call CompileTemplates()
+    #call CompileTemplates() #do not call compile templates for the moment since we are skipping sass and haml
     if !exists("w:opened")
         let w:opened = 1 
         :silent !open `cat /tmp/fiddle.addr`
@@ -29,11 +29,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 main.scss
-badd +0 index.haml
+badd +0 main.css
+badd +0 index.html
 badd +0 main.js
 silent! argdel *
-edit index.haml
+edit index.html
 set splitbelow splitright
 wincmd _ | wincmd |
 split
@@ -66,7 +66,7 @@ normal! zt
 normal! 0
 wincmd w
 argglobal
-edit main.scss
+edit main.css
 let s:l = 1 - ((0 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l

@@ -1,6 +1,4 @@
-/*jslint anon: true, sloppy: true*/
-/*global $ */
 
 $(function() {
-    // My brilliant stuff comes here
+    //add your code here to test jquery
 });

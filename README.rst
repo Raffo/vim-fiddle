@@ -1,15 +1,19 @@
 Quick prototyping platform for your HTML/CSS needs
 ==================================================
 
+This is a remake of this github project: mharju/vim-fiddle. A huge thanks to mharju for sharing.
+The goal of this project is to create a portable, offline version of jsfiddle, giving the end user the possibility to use vim as an editor. 
+
 To use, just clone this repository and type::
 
-./fiddle.sh
+npm install #this installs all the dependencies needed.
 
-The script creates a new fiddling directory, starts up MVIM and the WSGI-server with Bottle Framework. Use ``<Leader>r`` to compile and open the file in browser or refresh it. Set ``g:fiddle_browser`` to the default browser you are having or leave it as is to
-use Google Chrome.
+node fiddle.js 
 
-Check out ``fiddle.sh`` for configuration options such as VIM executable name and the directory where to put the fiddles
-in. **Note:** if you use Rooter or a plugin that changes the current working directory, this script might not work.
+The node file will create a directory with the files in template/ and will start vim with a jsfiddle-like setting. 
+When you'll see the vim editor open the file will be already served by the webserver. The file can be executed by going to:
+
+http://localhost:3000/fiddle/index.html
 
 Screenshot
 ==========
@@ -19,20 +23,16 @@ Screenshot
 Requirements
 ============
 
-* Python
-* HAML_
-* SASS_
+* node.js installed
 
-.. _HAML: http://haml-lang.com/
-.. _SASS: http://sass-lang.com/
 
-Licence 
+License 
 ------- 
  
-Licenced under MIT:: 
+Licenced under the terms of the MIT License by Raffaele Di Fazio.
  
-    Copyright (C) 2011 by Mikko Harju 
- 
+    Copyright (C) 2011 by Mikko Harju.
+    
     Permission is hereby granted, free of charge, to any person obtaining a copy 
     of this software and associated documentation files (the "Software"), to deal 
     in the Software without restriction, including without limitation the rights 
